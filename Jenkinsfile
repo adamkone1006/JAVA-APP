@@ -12,8 +12,7 @@ pipeline {
           checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[credentialsId: 'git', url: 'https://github.com/adamkone1006/JAVA-APP.git']]])
         }
       }
-    }
-    stage ('Build')  {
+      stage ('Build')  {
 	      steps {
           
             dir('java-source'){
@@ -22,4 +21,5 @@ pipeline {
         }
          
       }
+    }
 }
