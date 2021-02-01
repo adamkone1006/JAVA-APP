@@ -13,4 +13,13 @@ pipeline {
         }
       }
     }
+    stage ('Build')  {
+	      steps {
+          
+            dir('java-source'){
+            sh "mvn package"
+          }
+        }
+         
+      }
 }
